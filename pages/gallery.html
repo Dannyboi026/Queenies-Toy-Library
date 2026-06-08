@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Queenie's Toy Library</title>
+<link rel="icon" href="../images/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="preloader"><img src="../images/logo.png" alt=""><div class="preloader-bar"><div class="preloader-fill"></div></div></div>
+<nav class="nav" id="nav"><div class="container"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo"><img src="../images/logo.png" alt="Queenie's Toy Library" class="dark"></a>
+  <div class="nav-links"><a href="../index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html" class="active">Gallery</a><a href="donate.html">Donate</a><a href="contact.html">Contact</a></div>
+  <div class="nav-cta"><a href="https://library.queeniestoylibrary.org" class="btn btn-coral btn-sm">Library</a></div>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</div></div></nav>
+<div class="mobile-nav" id="mobileNav"><button class="mobile-close" id="mClose">&times;</button><a href="../index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="donate.html">Donate</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="https://library.queeniestoylibrary.org" class="btn btn-coral" style="width:100%;justify-content:center;">Library</a></div></div>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <h1>Gallery</h1>
+    <p>Moments of joy, play, and community from Queenie's Toy Library.</p>
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span class="current">Gallery</span></div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="section-header center fade-up">
+      <span class="section-eyebrow"><span class="pill pill-amber">Our Community</span></span>
+      <h2 class="section-title">Our Favourite Moments</h2>
+      <p class="section-sub">Real families. Real joy. Real community.</p>
+    </div>
+    <div class="gallery-grid-page fade-up">
+      <div class="gallery-page-item" style="height:320px;"><img src="../images/gallery-1.jpg" alt="Community Gathering" style="height:320px;"><div class="gcap">Community Gathering</div></div>
+      <div class="gallery-page-item" style="height:320px;"><img src="../images/gallery-2.jpg" alt="Play Session" style="height:320px;"><div class="gcap">Play Session</div></div>
+      <div class="gallery-page-item" style="height:320px;"><img src="../images/gallery-3.jpg" alt="Children at Play" style="height:320px;"><div class="gcap">Children at Play</div></div>
+      <div class="gallery-page-item" style="height:360px;"><img src="../images/gallery-4.jpg" alt="Parenting Workshop" style="height:360px;"><div class="gcap">Parenting Workshop</div></div>
+      <div class="gallery-page-item" style="height:360px;"><img src="../images/gallery-5.jpg" alt="Toy Collection" style="height:360px;"><div class="gcap">Toy Collection</div></div>
+      <div class="gallery-page-item" style="height:360px;"><img src="../images/gallery-6.jpg" alt="Parent Support Group" style="height:360px;"><div class="gcap">Parent Support Group</div></div>
+      <div class="gallery-page-item" style="height:300px;"><img src="../images/gallery-7.jpg" alt="Sensory Play" style="height:300px;"><div class="gcap">Sensory Play</div></div>
+      <div class="gallery-page-item" style="height:300px;"><img src="../images/gallery-8.jpg" alt="Community Event" style="height:300px;"><div class="gcap">Community Event</div></div>
+      <div class="gallery-page-item" style="height:300px;"><img src="../images/gallery-9.jpg" alt="Learning Together" style="height:300px;"><div class="gcap">Learning Together</div></div>
+      <div class="gallery-page-item" style="grid-column:span 3;height:380px;"><img src="../images/gallery-10.jpg" alt="Happy Families" style="height:380px;width:100%;"><div class="gcap">Happy Families</div></div>
+    </div>
+
+    <div style="text-align:center;margin-top:64px;" class="fade-up">
+      <div style="background:var(--cream2);border-radius:28px;padding:52px 48px;max-width:580px;margin:0 auto;">
+        <h3 style="margin-bottom:14px;">Want to Share Your Story?</h3>
+        <p style="color:var(--muted);font-size:1.6rem;margin-bottom:28px;">Send us your photos and we'd love to feature your family in our gallery!</p>
+        <a href="contact.html" class="btn btn-coral">Get in Touch <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Queenie's Toy Library. All rights reserved.</p><div class="footer-bottom-links"><a href="../index.html">Home</a><a href="borrow.html">Borrow</a><a href="contact.html">Contact</a></div></div></div></footer>
+<div id="btt"><i class="fas fa-arrow-up"></i></div>
+<script src="../js/jquery.min.js"></script>
+<script>
+  window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('done');},800);});
+  const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);document.getElementById('btt').classList.toggle('show',window.scrollY>500);});
+  document.getElementById('ham').addEventListener('click',()=>document.getElementById('mobileNav').classList.add('open'));
+  document.getElementById('mClose').addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
+  document.getElementById('btt').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.12});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body></html>

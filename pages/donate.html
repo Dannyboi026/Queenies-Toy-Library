@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate — Queenie's Toy Library</title>
+<link rel="icon" href="../images/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="preloader"><img src="../images/logo.png" alt=""><div class="preloader-bar"><div class="preloader-fill"></div></div></div>
+<nav class="nav" id="nav"><div class="container"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo"><img src="../images/logo.png" alt="Queenie's Toy Library" class="dark"></a>
+  <div class="nav-links"><a href="../index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="donate.html" class="active">Donate</a><a href="contact.html">Contact</a></div>
+  <div class="nav-cta"><a href="https://library.queeniestoylibrary.org" class="btn btn-coral btn-sm">Library</a></div>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</div></div></nav>
+<div class="mobile-nav" id="mobileNav"><button class="mobile-close" id="mClose">&times;</button><a href="../index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="donate.html">Donate</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="https://library.queeniestoylibrary.org" class="btn btn-coral" style="width:100%;justify-content:center;">Library</a></div></div>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <h1>Support &amp; Donate</h1>
+    <p>Your support keeps every service free for every family that needs us.</p>
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span class="current">Donate</span></div>
+  </div>
+</section>
+
+<!-- Ways to support -->
+<section class="section section-cream2">
+  <div class="container">
+    <div class="section-header center fade-up">
+      <span class="section-eyebrow"><span class="pill pill-coral">Get Involved</span></span>
+      <h2 class="section-title">Ways to Support Us</h2>
+    </div>
+    <div class="support-grid">
+      <div class="support-card fade-up">
+        <div class="support-icon" style="background:var(--coral);"><i class="fas fa-box-open"></i></div>
+        <h3>Donate a Toy</h3>
+        <p>Give gently used developmental toys in good, clean condition. Every toy goes directly to a child who needs it.</p>
+        <div class="accept-list">
+          <p>We accept:</p>
+          <ul>
+            <li><i class="fas fa-check" style="color:var(--sage);margin-right:8px;"></i>Gently used, clean toys</li>
+            <li><i class="fas fa-check" style="color:var(--sage);margin-right:8px;"></i>All parts present &amp; working</li>
+            <li><i class="fas fa-check" style="color:var(--sage);margin-right:8px;"></i>Developmental &amp; educational toys</li>
+          </ul>
+        </div>
+        <a href="#donate-form" class="btn btn-coral">Donate a Toy <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="support-card dark fade-up" style="transition-delay:.1s">
+        <div class="support-icon" style="background:var(--amber);"><i class="fas fa-hand-holding-usd" style="color:var(--plum);"></i></div>
+        <h3 style="color:#fff;">Financial Support</h3>
+        <p>Help us buy adapted toys, run workshops, and keep every service free for families who need us most.</p>
+        <div class="accept-list">
+          <p>Your money goes to:</p>
+          <ul>
+            <li><i class="fas fa-check" style="color:var(--amber);margin-right:8px;"></i>Purchasing adapted toys</li>
+            <li><i class="fas fa-check" style="color:var(--amber);margin-right:8px;"></i>Running workshops &amp; classes</li>
+            <li><i class="fas fa-check" style="color:var(--amber);margin-right:8px;"></i>Community events &amp; programs</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn btn-amber">Get in Touch <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="support-card fade-up" style="transition-delay:.2s">
+        <div class="support-icon" style="background:var(--sage);"><i class="fas fa-hands-helping"></i></div>
+        <h3>Volunteer</h3>
+        <p>Give your time to help with toy sorting, events, workshops, school visits, or admin. All skills welcome.</p>
+        <div class="accept-list">
+          <p>Volunteer roles:</p>
+          <ul>
+            <li><i class="fas fa-check" style="color:var(--sage);margin-right:8px;"></i>Toy sorting &amp; inventory</li>
+            <li><i class="fas fa-check" style="color:var(--sage);margin-right:8px;"></i>Event &amp; workshop support</li>
+            <li><i class="fas fa-check" style="color:var(--sage);margin-right:8px;"></i>School outreach programs</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn btn-sm" style="background:var(--sage);color:#fff;border-radius:100px;padding:13px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.5rem;">Volunteer <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Donation form -->
+<section class="section section-white" id="donate-form">
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="form-card fade-up">
+        <span class="section-eyebrow"><span class="pill pill-coral">Toy Donation</span></span>
+        <h2 class="section-title" style="margin-bottom:8px;">Donate a Toy</h2>
+        <p style="color:var(--muted);font-size:1.45rem;margin-bottom:32px;">Fill in the form and we'll arrange a convenient drop-off time.</p>
+        <form action="../mail/donate.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
+          <input type="hidden" name="form_type" value="toy_donation">
+          <div class="form-group"><label>Your Name <span class="req">*</span></label><input type="text" name="name" placeholder="Full name" required></div>
+          <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" placeholder="your@email.com" required></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="416-000-0000"></div>
+          <div class="form-group"><label>Toy Description <span class="req">*</span></label><textarea name="toy_description" placeholder="Describe the toy(s) — what they are, age range, condition, and whether all parts are present." required></textarea></div>
+          <div class="form-group"><label>Number of Toys</label>
+            <select name="toy_count"><option>1 toy</option><option>2–5 toys</option><option>6–10 toys</option><option>More than 10</option></select>
+          </div>
+          <div class="form-group"><label>Condition <span class="req">*</span></label>
+            <select name="condition" required><option value="">Select condition</option><option>Excellent — like new</option><option>Good — minor wear, fully functional</option><option>Fair — some wear, complete &amp; functional</option></select>
+          </div>
+          <div class="form-group"><label>Preferred drop-off availability</label><input type="text" name="availability" placeholder="e.g. Weekday afternoons, Saturday mornings"></div>
+          <button type="submit" class="btn btn-coral form-submit"><i class="fas fa-heart"></i> Submit Donation</button>
+        </form>
+      </div>
+      <div class="sidebar-stack fade-up" style="transition-delay:.15s;">
+        <div class="sidebar-widget coral">
+          <h4>Your Donation Matters</h4>
+          <p>Every toy donated reaches a child who needs it. You're not just giving a toy — you're giving a child a chance to grow, learn, and play.</p>
+          <a href="contact.html" class="btn btn-plum btn-sm">Get in Touch</a>
+        </div>
+        <div class="sidebar-widget cream">
+          <h4 style="color:var(--plum);">We Don't Accept</h4>
+          <ul style="list-style:none;padding:0;">
+            <li style="display:flex;align-items:center;gap:10px;font-size:1.4rem;color:var(--muted);margin-bottom:10px;"><i class="fas fa-times" style="color:#DC2626;width:16px;"></i>Broken or missing parts</li>
+            <li style="display:flex;align-items:center;gap:10px;font-size:1.4rem;color:var(--muted);margin-bottom:10px;"><i class="fas fa-times" style="color:#DC2626;width:16px;"></i>Soiled or heavily worn toys</li>
+            <li style="display:flex;align-items:center;gap:10px;font-size:1.4rem;color:var(--muted);"><i class="fas fa-times" style="color:#DC2626;width:16px;"></i>Safety-recalled items</li>
+          </ul>
+          <p style="color:var(--muted);font-size:1.3rem;margin-top:14px;font-style:italic;">If in doubt, contact us first!</p>
+        </div>
+        <div class="sidebar-widget dark">
+          <h4><i class="fas fa-clock" style="margin-right:8px;"></i>Drop-off Hours</h4>
+          <ul class="hours-rows dark">
+            <li><span>Tue – Thu</span><span class="val">10:00am – 3:00pm</span></li>
+            
+            <li><span>Other Days</span><span class="closed">Closed</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Queenie's Toy Library. All rights reserved.</p><div class="footer-bottom-links"><a href="../index.html">Home</a><a href="borrow.html">Borrow</a><a href="contact.html">Contact</a></div></div></div></footer>
+<div id="btt"><i class="fas fa-arrow-up"></i></div>
+<script src="../js/jquery.min.js"></script>
+<script>
+  window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('done');},800);});
+  const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);document.getElementById('btt').classList.toggle('show',window.scrollY>500);});
+  document.getElementById('ham').addEventListener('click',()=>document.getElementById('mobileNav').classList.add('open'));
+  document.getElementById('mClose').addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
+  document.getElementById('btt').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.12});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body></html>

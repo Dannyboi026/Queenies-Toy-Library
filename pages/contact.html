@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Queenie's Toy Library</title>
+<link rel="icon" href="../images/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* ── Contact page specific ── */
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: start; }
+
+  /* Info panel */
+  .contact-info-panel { display: flex; flex-direction: column; gap: 20px; }
+  .info-card {
+    background: #fff; border-radius: 20px; padding: 28px 30px;
+    box-shadow: 0 4px 24px rgba(44,24,16,.08); border: 1px solid var(--border);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .info-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(44,24,16,.13); }
+  .info-card.featured { background: var(--coral); border-color: transparent; box-shadow: 0 8px 32px rgba(255,107,107,.3); }
+  .info-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .info-card-icon {
+    width: 48px; height: 48px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; color: #fff; flex-shrink: 0;
+  }
+  .info-card h4 { font-size: 1.8rem; color: var(--dark); }
+  .info-card.featured h4 { color: #fff; }
+  .info-card ul { list-style: none; padding: 0; }
+  .info-card ul li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 1.5rem; color: var(--muted); margin-bottom: 10px; line-height: 1.6;
+  }
+  .info-card ul li:last-child { margin-bottom: 0; }
+  .info-card ul li i { color: var(--coral); margin-top: 2px; flex-shrink: 0; width: 16px; text-align: center; }
+  .info-card.featured ul li { color: rgba(255,255,255,.9); }
+  .info-card.featured ul li i { color: rgba(255,255,255,.7); }
+  .info-card ul li a { color: var(--muted); transition: color .2s; }
+  .info-card ul li a:hover { color: var(--coral); }
+  .info-card.featured ul li a { color: rgba(255,255,255,.9); }
+  .info-card.featured ul li a:hover { color: #fff; }
+
+  /* Socials row */
+  .social-card { background: var(--dark); border-color: transparent; }
+  .social-card h4 { color: var(--amber); }
+  .socials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .social-item {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; padding: 16px 10px; border-radius: 14px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
+    text-decoration: none; transition: all .25s; text-align: center;
+  }
+  .social-item:hover { background: rgba(255,255,255,.12); transform: translateY(-3px); }
+  .social-item i { font-size: 2.4rem; }
+  .social-item span { font-size: 1.2rem; color: rgba(255,255,255,.65); font-weight: 600; }
+  .social-item.fb i { color: #1877F2; }
+  .social-item.ig i { color: #E1306C; }
+  .social-item.tw i { color: #1DA1F2; }
+
+  /* Map embed */
+  .map-wrap { border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(44,24,16,.1); border: 1px solid var(--border); height: 220px; }
+  .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+  /* Form card */
+  .contact-form-card {
+    background: #fff; border-radius: 24px; padding: 52px 52px;
+    box-shadow: 0 8px 48px rgba(44,24,16,.10); border: 1px solid var(--border);
+  }
+
+  /* Ensure Name + Email row inputs are perfectly even */
+  .form-row { align-items: end; }
+  .form-row .form-group { display: flex; flex-direction: column; height: 100%; }
+  .form-row .form-group input { height: 52px; box-sizing: border-box; }
+
+  @media(max-width:900px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-form-card { padding: 32px 24px; }
+    .socials-grid { grid-template-columns: repeat(3,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div id="preloader"><img src="../images/logo.png" alt=""><div class="preloader-bar"><div class="preloader-fill"></div></div></div>
+
+<nav class="nav" id="nav"><div class="container"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo"><img src="../images/logo.png" alt="Queenie's Toy Library" class="dark"></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="donate.html">Donate</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+  <div class="nav-cta"><a href="https://library.queeniestoylibrary.org" class="btn btn-coral btn-sm">Library</a></div>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</div></div></nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mClose">&times;</button>
+  <a href="../index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  
+  <a href="donate.html">Donate</a><a href="contact.html">Contact</a>
+  <div class="mobile-cta"><a href="https://library.queeniestoylibrary.org" class="btn btn-coral" style="width:100%;justify-content:center;">Library</a></div>
+</div>
+
+<!-- Page Header -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Reach out any time.</p>
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span class="current">Contact</span></div>
+  </div>
+</section>
+
+<!-- Main content -->
+<section class="section section-cream2">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- LEFT: Contact info cards -->
+      <div class="contact-info-panel">
+
+        <!-- Address -->
+        <div class="info-card fade-up">
+          <div class="info-card-head">
+            <div class="info-card-icon" style="background:var(--coral);"><i class="fas fa-map-marker-alt"></i></div>
+            <h4>Postal Address</h4>
+          </div>
+          <ul>
+            <li><i class="fas fa-building"></i><span>943 Barry Downe Rd<br>Greater Sudbury, Ontario &nbsp; P3A 3T9</span></li>
+          </ul>
+        </div>
+
+        <!-- Phone & Email -->
+        <div class="info-card featured fade-up" style="transition-delay:.08s;">
+          <div class="info-card-head">
+            <div class="info-card-icon" style="background:rgba(255,255,255,.25);"><i class="fas fa-phone-alt"></i></div>
+            <h4>Phone &amp; Email</h4>
+          </div>
+          <ul>
+            <li><i class="fas fa-phone"></i><a href="tel:4167355242">416-735-5242</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:info@queeniestoylibrary.org">info@queeniestoylibrary.org</a></li>
+          </ul>
+        </div>
+
+        <!-- Business hours -->
+        <div class="info-card fade-up" style="transition-delay:.16s;">
+          <div class="info-card-head">
+            <div class="info-card-icon" style="background:var(--amber);"><i class="fas fa-clock"></i></div>
+            <h4>Business Hours</h4>
+          </div>
+          <ul>
+            <li><i class="fas fa-calendar-check" style="color:var(--sage);"></i><span><strong style="color:var(--dark);">Tuesday – Thursday</strong><br>10:00 – 15:00</span></li>
+            <li><i class="fas fa-calendar-times" style="color:var(--coral);"></i><span><strong style="color:var(--coral);">Other Days — Closed</strong></span></li>
+          </ul>
+        </div>
+
+        <!-- Socials -->
+        <div class="info-card social-card fade-up" style="transition-delay:.24s;">
+          <div class="info-card-head">
+            <div class="info-card-icon" style="background:rgba(255,255,255,.1);"><i class="fas fa-share-alt" style="color:#fff;"></i></div>
+            <h4>Follow Us</h4>
+          </div>
+          <div class="socials-grid">
+            <a href="https://facebook.com/queeniestoylibrary" target="_blank" class="social-item fb">
+              <i class="fab fa-facebook-f"></i>
+              <span>@queeniestoylibrary</span>
+            </a>
+            <a href="https://instagram.com/queeniestoylibrary" target="_blank" class="social-item ig">
+              <i class="fab fa-instagram"></i>
+              <span>@queeniestoylibrary</span>
+            </a>
+            <a href="https://twitter.com/queeniestoylibrary" target="_blank" class="social-item tw">
+              <i class="fab fa-twitter"></i>
+              <span>@queeniestoylibrary</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-wrap fade-up" style="transition-delay:.32s;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.3!2d-80.9773!3d46.4866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s943+Barry+Downe+Rd%2C+Greater+Sudbury%2C+ON+P3A+3T9!5e0!3m2!1sen!2sca!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Queenie's Toy Library location map">
+          </iframe>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Contact form -->
+      <div class="contact-form-card fade-up" style="transition-delay:.1s;">
+        <span class="section-eyebrow" style="display:block;margin-bottom:10px;"><span class="pill pill-coral">Contact Us</span></span>
+        <h2 class="section-title" style="margin-bottom:8px;">Get In Touch</h2>
+        <p style="color:var(--muted);font-size:1.5rem;margin-bottom:36px;">Fill in the form below and we'll get back to you as soon as possible.</p>
+
+        <form action="../mail/contact.php" method="POST" id="contactForm">
+          <input type="hidden" name="form_type" value="contact">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name <span class="req">*</span></label>
+              <input type="text" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:20px;">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="416-000-0000">
+          </div>
+
+          <div class="form-group" style="margin-top:20px;">
+            <label>Subject</label>
+            <select name="subject">
+              <option value="">Select a topic</option>
+              <option value="borrow">Toy borrowing enquiry</option>
+              <option value="donate">Toy donation</option>
+              <option value="volunteer">Volunteering</option>
+              <option value="workshop">Workshops &amp; classes</option>
+              <option value="partnership">Partnership / Organisation</option>
+              <option value="media">Media enquiry</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-top:20px;">
+            <label>Message <span class="req">*</span></label>
+            <textarea name="message" rows="6" placeholder="Tell us how we can help..." required></textarea>
+          </div>
+
+          <!-- Success / error messages -->
+          <div id="form-success" style="display:none;background:#d4edda;border:1px solid #28a745;color:#155724;border-radius:12px;padding:16px 20px;margin-top:20px;font-size:1.5rem;">
+            <i class="fas fa-check-circle" style="margin-right:8px;"></i>Thank you! Your message has been sent. We'll be in touch shortly.
+          </div>
+          <div id="form-error" style="display:none;background:#f8d7da;border:1px solid #dc3545;color:#721c24;border-radius:12px;padding:16px 20px;margin-top:20px;font-size:1.5rem;">
+            <i class="fas fa-exclamation-circle" style="margin-right:8px;"></i>Something went wrong. Please email us directly at <a href="mailto:info@queeniestoylibrary.org" style="color:#721c24;font-weight:700;">info@queeniestoylibrary.org</a>
+          </div>
+
+          <button type="submit" class="btn btn-coral form-submit" style="margin-top:28px;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-note">We typically reply within 1–2 business days.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap"><img src="../images/logo.png" alt="Queenie's Toy Library"></div>
+        <p class="footer-desc">An early intervention initiative and parent support group providing free toy lending and community support for all families in Sudbury, Ontario.</p>
+        <div class="footer-socials">
+          <a href="https://facebook.com/queeniestoylibrary" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/queeniestoylibrary" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/queeniestoylibrary" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li></li>
+          <li></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Opening Hours</h5>
+        <ul class="footer-hours">
+          <li><span>Tue – Thu</span><span class="v">10:00am – 3:00pm</span></li>
+          <li><span>Other Days</span><span class="c">Closed</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul class="footer-contact">
+          <li><i class="fas fa-phone"></i><a href="tel:4167355242">416-735-5242</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:info@queeniestoylibrary.org">info@queeniestoylibrary.org</a></li>
+          <li><i class="fas fa-map-marker-alt"></i><span>943 Barry Downe Rd<br>Greater Sudbury, Ontario P3A 3T9</span></li>
+        </ul>
+        <a href="borrow.html" class="btn btn-coral btn-sm" style="margin-top:20px;">Library</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Queenie's Toy Library. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="btt"><i class="fas fa-arrow-up"></i></div>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+  window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('done');},800);});
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled',window.scrollY>10);
+    document.getElementById('btt').classList.toggle('show',window.scrollY>500);
+  });
+  document.getElementById('ham').addEventListener('click',()=>document.getElementById('mobileNav').classList.add('open'));
+  document.getElementById('mClose').addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
+  document.getElementById('btt').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.1});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+  // Show success/error based on URL param
+  const params = new URLSearchParams(window.location.search);
+  if(params.get('status')==='success') document.getElementById('form-success').style.display='block';
+  if(params.get('status')==='error')   document.getElementById('form-error').style.display='block';
+</script>
+</body>
+</html>

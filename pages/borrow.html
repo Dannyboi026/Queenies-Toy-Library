@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borrow a Toy — Queenie's Toy Library</title>
+<link rel="icon" href="../images/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="preloader"><img src="../images/logo.png" alt=""><div class="preloader-bar"><div class="preloader-fill"></div></div></div>
+<nav class="nav" id="nav"><div class="container"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo"><img src="../images/logo.png" alt="Queenie's Toy Library" class="dark"></a>
+  <div class="nav-links"><a href="../index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="borrow.html" class="active">Borrow a Toy</a><a href="donate.html">Donate</a><a href="contact.html">Contact</a></div>
+  <div class="nav-cta"><a href="https://library.queeniestoylibrary.org" class="btn btn-coral btn-sm">Library</a></div>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</div></div></nav>
+<div class="mobile-nav" id="mobileNav"><button class="mobile-close" id="mClose">&times;</button><a href="../index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="donate.html">Donate</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="https://library.queeniestoylibrary.org" class="btn btn-coral" style="width:100%;justify-content:center;">Library</a></div></div>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <h1>Borrow a Toy</h1>
+    <p>Free for 3 weeks. No membership. No deposit. Just great toys for your child.</p>
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span class="current">Borrow a Toy</span></div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="section--sm section-cream2">
+  <div class="container">
+    <div class="section-header center fade-up" style="margin-bottom:48px;">
+      <span class="section-eyebrow"><span class="pill pill-coral">Simple Process</span></span>
+      <h2 class="section-title">How It Works</h2>
+    </div>
+    <div class="hiw-grid">
+      <div class="hiw-step fade-up"><div class="hiw-num" style="background:var(--coral);">1</div><h4>Fill the Form</h4><p>Tell us about your child and the types of toys you'd like to borrow from our collection.</p></div>
+      <div class="hiw-step fade-up" style="transition-delay:.08s"><div class="hiw-num" style="background:#7C3AED;">2</div><h4>Schedule Pickup</h4><p>After submitting, choose your pickup date and time using our Calendly scheduler.</p></div>
+      <div class="hiw-step fade-up" style="transition-delay:.16s"><div class="hiw-num" style="background:var(--amber);color:var(--plum);">3</div><h4>Enjoy 3 Weeks</h4><p>Pick up your toys and enjoy them at home. We'll send reminders before your return date.</p></div>
+      <div class="hiw-step fade-up" style="transition-delay:.24s"><div class="hiw-num" style="background:var(--plum);">4</div><h4>Return &amp; Repeat</h4><p>Return toys in good condition and borrow again — as many times as you like!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Form -->
+<section class="section section-white">
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="form-card fade-up">
+        <span class="section-eyebrow"><span class="pill pill-coral">Free Booking</span></span>
+        <h2 class="section-title" style="margin-bottom:8px;">Toy Borrowing Request</h2>
+        <p style="color:var(--muted);font-size:1.45rem;margin-bottom:32px;">This form submits to our lending system at <a href="https://library.queeniestoylibrary.org" style="color:var(--coral);font-weight:600;">library.queeniestoylibrary.org</a></p>
+
+        <form action="https://library.queeniestoylibrary.org/booking.php" method="POST">
+          <input type="hidden" name="form_type" value="borrow">
+
+          <div class="form-section-title">Parent / Guardian Details</div>
+          <div class="form-row">
+            <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" name="first_name" placeholder="Your first name" required></div>
+            <div class="form-group"><label>Last Name <span class="req">*</span></label><input type="text" name="last_name" placeholder="Your last name" required></div>
+          </div>
+          <div class="form-row" style="margin-top:20px;">
+            <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" placeholder="your@email.com" required></div>
+            <div class="form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" name="phone" placeholder="+1 (000) 000-0000" required></div>
+          </div>
+
+          <div class="form-section-title">Child Information</div>
+          <div class="form-row">
+            <div class="form-group"><label>Child's Name <span class="req">*</span></label><input type="text" name="child_name" placeholder="Child's first name" required></div>
+            <div class="form-group"><label>Child's Age <span class="req">*</span></label>
+              <select name="child_age" required>
+                <option value="">Select age range</option>
+                <option>0 – 12 months</option><option>1 – 2 years</option><option>2 – 3 years</option>
+                <option>3 – 5 years</option><option>5 – 7 years</option><option>7 – 10 years</option><option>10+ years</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:20px;"><label>Special needs or considerations</label>
+            <select name="special_needs">
+              <option>No specific considerations</option><option>Developmental delay</option>
+              <option>Sensory processing needs</option><option>Physical disability</option>
+              <option>Autism spectrum</option><option>Other (describe in notes)</option>
+            </select>
+          </div>
+
+          <div class="form-section-title">Toy Preferences</div>
+          <div class="form-group"><label>Types of toys interested in</label>
+            <div class="check-grid" style="margin-top:12px;">
+              <label class="check-opt"><input type="checkbox" name="toy_types[]" value="sensory"><span>Sensory &amp; Tactile</span></label>
+              <label class="check-opt"><input type="checkbox" name="toy_types[]" value="motor"><span>Motor Skills</span></label>
+              <label class="check-opt"><input type="checkbox" name="toy_types[]" value="cognitive"><span>Cognitive &amp; Puzzles</span></label>
+              <label class="check-opt"><input type="checkbox" name="toy_types[]" value="language"><span>Language &amp; Literacy</span></label>
+              <label class="check-opt"><input type="checkbox" name="toy_types[]" value="music"><span>Music &amp; Sound</span></label>
+              <label class="check-opt"><input type="checkbox" name="toy_types[]" value="outdoor"><span>Outdoor &amp; Active Play</span></label>
+              <label class="check-opt"><input type="checkbox" name="toy_types[]" value="creative"><span>Creative &amp; Arts</span></label>
+              <label class="check-opt"><input type="checkbox" name="toy_types[]" value="adapted"><span>Adapted / Special Needs</span></label>
+            </div>
+          </div>
+          <div class="form-row" style="margin-top:20px;">
+            <div class="form-group"><label>How many toys? <span class="req">*</span></label>
+              <select name="toy_count" required>
+                <option value="1">1 toy</option><option value="2" selected>2 toys</option>
+                <option value="3">3 toys</option><option value="4">4 toys</option><option value="5">5 toys (max)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:20px;"><label>Additional notes or requests</label>
+            <textarea name="notes" placeholder="e.g. Looking for something to help with fine motor skills. Any recommendations welcome!"></textarea>
+          </div>
+
+          <div class="form-section-title">Lending Agreement</div>
+          <div class="terms-notice">
+            <ul>
+              <li><i class="fas fa-info-circle"></i>Toys are lent for <strong>3 weeks</strong> from the pickup date.</li>
+              <li><i class="fas fa-info-circle"></i>Toys must be returned <strong>in good condition</strong>, clean and with all parts.</li>
+              <li><i class="fas fa-info-circle"></i>This is a <strong>completely free service</strong> — no deposits or fees.</li>
+              <li><i class="fas fa-info-circle"></i>You will receive <strong>email reminders</strong> before pickup and return.</li>
+            </ul>
+          </div>
+          <label class="agree-wrap"><input type="checkbox" required><span>I agree to the lending terms above and will return toys in good condition within 3 weeks of pickup. <span class="req">*</span></span></label>
+          <button type="submit" class="btn btn-coral form-submit"><i class="fas fa-calendar-check"></i> Submit &amp; Schedule Pickup</button>
+          <p class="form-note">After submission you'll be redirected to choose your pickup date and time.</p>
+        </form>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar-stack fade-up" style="transition-delay:.15s;">
+        <div class="sidebar-widget dark">
+          <h4><i class="fas fa-info-circle" style="margin-right:8px;"></i>Good to Know</h4>
+          <ul class="info-rows dark">
+            <li><i class="fas fa-gift"></i><span>Completely <strong>free</strong> — no cost, no membership</span></li>
+            <li><i class="fas fa-calendar-alt"></i><span>Lending period: <strong>3 weeks</strong></span></li>
+            <li><i class="fas fa-box-open"></i><span>Up to <strong>5 toys</strong> per loan</span></li>
+            <li><i class="fas fa-bell"></i><span>Reminders sent <strong>48 hrs</strong> before pickup &amp; return</span></li>
+            <li><i class="fas fa-redo"></i><span>Borrow <strong>as many times</strong> as you like</span></li>
+          </ul>
+        </div>
+        <div class="sidebar-widget cream">
+          <h4 style="color:var(--plum);"><i class="fas fa-clock" style="color:var(--coral);margin-right:8px;"></i>Pickup Hours</h4>
+          <ul class="hours-rows">
+            <li><span>Tue – Thu</span><span class="val">10:00am – 3:00pm</span></li>
+            
+            <li><span>Other Days</span><span class="closed">Closed</span></li>
+          </ul>
+        </div>
+        <div class="sidebar-widget coral">
+          <h4>Questions?</h4>
+          <p>Not sure what to borrow? We're happy to help you find the perfect toy for your child.</p>
+          <a href="contact.html" class="btn btn-plum btn-sm">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Queenie's Toy Library. All rights reserved.</p><div class="footer-bottom-links"><a href="../index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div></div></footer>
+<div id="btt"><i class="fas fa-arrow-up"></i></div>
+<script src="../js/jquery.min.js"></script>
+<script>
+  window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('done');},800);});
+  const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);document.getElementById('btt').classList.toggle('show',window.scrollY>500);});
+  document.getElementById('ham').addEventListener('click',()=>document.getElementById('mobileNav').classList.add('open'));
+  document.getElementById('mClose').addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
+  document.getElementById('btt').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.12});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body></html>
